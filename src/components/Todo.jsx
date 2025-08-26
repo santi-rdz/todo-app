@@ -9,8 +9,8 @@ import { useLocalStrState } from "../hooks/useLocaleStrState";
 
 const initialTodo = [
   { text: "Learning React", id: 12123120320, isCompleted: false },
-  { text: "Learn Astro", id: 12123120320, isCompleted: false },
-  { text: "Qliar", id: 12123120320, isCompleted: false },
+  { text: "Learn Astro", id: 1212312012, isCompleted: false },
+  { text: "Qliar", id: 12123123, isCompleted: false },
 ];
 
 export default function Todo() {
