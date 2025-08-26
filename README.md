@@ -1,5 +1,7 @@
 # Todo App React
 
+Live View: [Site](https://rdz-todo-app-react.netlify.app)
+
 Slution to [Frontend Mentor Todo App challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW).  
 The project is built with **React** and **TailwindCSS**, including drag-and-drop functionality using **dnd-kit**.
 
