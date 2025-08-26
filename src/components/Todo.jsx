@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DndContext, closestCenter, useSensor, useSensors, PointerSensor } from "@dnd-kit/core";
+import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, verticalListSortingStrategy, arrayMove } from "@dnd-kit/sortable";
 
 import TodoList from "./TodoList";
@@ -11,13 +11,6 @@ export default function Todo() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useLocalStrState("todos", []);
   const [activeFilter, setActiveFilter] = useState("all");
-  const pointerSensor = useSensor(PointerSensor, {
-    activationConstraint: {
-      delay: 200, // 200ms de presión antes de activar drag
-      tolerance: 5, // tolerancia de movimiento inicial
-    },
-  });
-  const sensors = useSensors(pointerSensor);
 
   const filteredTodos = todos.filter((todo) => {
     if (activeFilter === "all") return true;
@@ -56,7 +49,7 @@ export default function Todo() {
   return (
     <main className="my-container -translate-y-26 sm:-translate-y-36 space-y-4">
       <TodoForm todo={todo} setTodo={setTodo} onAddTodo={handleAddTodo} />
-      <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+      <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext items={todos} strategy={verticalListSortingStrategy}>
           <TodoList
             todos={todos}

@@ -76,7 +76,7 @@ function TodoItem({ todo, children, onToggleCompleted, onDeleteTodo }) {
       >
         {children}
       </p>
-      <button onClick={() => onDeleteTodo(id)} className="ml-auto hidden cursor-pointer group-hover:flex">
+      <button onClick={() => onDeleteTodo(id)} className="ml-auto xl:hidden cursor-pointer group-hover:flex">
         <img src={crossIcon} alt="" className="z-10" />
       </button>
     </li>
