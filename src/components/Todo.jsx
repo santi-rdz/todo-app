@@ -7,9 +7,15 @@ import TodoForm from "./TodoForm";
 import FilterGroup from "./FilterGroup";
 import { useLocalStrState } from "../hooks/useLocaleStrState";
 
+const initialTodo = [
+  { text: "Learning React", id: 12123120320, isCompleted: false },
+  { text: "Learn Astro", id: 12123120320, isCompleted: false },
+  { text: "Qliar", id: 12123120320, isCompleted: false },
+];
+
 export default function Todo() {
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useLocalStrState("todos", []);
+  const [todos, setTodos] = useLocalStrState("todos", initialTodo);
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filteredTodos = todos.filter((todo) => {
