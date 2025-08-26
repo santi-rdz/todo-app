@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Josefin";
+  src: url("assets/Josefin_Sans/JosefinSans-VariableFont_wght.ttf");
+}
+@theme {
+  --font-josefin: "Josefin";
+  --color-purple-800: #393a4b;
+  --color-purple-700: #4d5067;
+  --color-purple-600: #5b5e7e;
+  --color-purple-300: #c8cbe7;
+  --color-purple-100: #e3e4f1;
+  --color-gray-600: #9495a5;
+  --color-gray-300: #d1d2da;
+  --color-gray-50: #fafafa;
+  --color-navy-950: #171823;
+  --color-navy-900: #25273d;
+  --color-navy-850: #494c6b;
+  --color-blue-500: #3a7cfd;
+  --color-gradient-1-start: #55ddff;
+  --color-gradient-1-end: #c058f3;
+  --color-gradient-2-start: #3710bd;
+  --color-gradient-2-end: #a42395;
+}
+
+.main-header {
+  width: 100%;
+  top: 0;
+
+  background-image: url("assets/images/bg-mobile-light.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (width >=640px) {
+    background-image: url("assets/images/bg-desktop-light.jpg");
+    background-position: left;
+  }
+}
+.dark .main-header {
+  background-image: url("assets/images/bg-mobile-dark.jpg");
+
+  @media (width >=640px) {
+    background-image: url("assets/images/bg-desktop-dark.jpg");
+    background-position: left;
+  }
+}
+
+@utility my-container {
+  width: min(90%, 40rem);
+  margin-inline: auto;
+}
+
+@utility text-0 {
+  font-size: clamp(1.75rem, 1.4419rem + 1.3146vw, 2.625rem);
+}
+@utility text-1 {
+  font-size: clamp(0.875rem, 0.787rem + 0.3756vw, 1.125rem);
+  letter-spacing: -0.25px;
+}
+
+@utility text-2 {
+  font-size: 0.875rem;
+  letter-spacing: -0.25px;
+}
